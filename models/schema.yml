@@ -1,0 +1,108 @@
+version: 2
+
+models:
+  # STG Models
+  - name: stg_employees
+    description: Staging table for employees
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_departments
+    description: Staging table for departments
+    columns:
+      - name: department_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_locations
+    description: Staging table for locations
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_jobs
+    description: Staging table for jobs
+    columns:
+      - name: job_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_countries
+    description: Staging table for countries
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_regions
+    description: Staging table for regions
+    columns:
+      - name: region_id
+        tests:
+          - not_null
+          - unique
+
+  - name: stg_salary
+    description: Staging table for salary data
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+
+  # DIM Models
+  - name: dim_employees
+    description: Dimension table for employees
+    columns:
+      - name: employee_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_departments
+    description: Dimension table for departments
+    columns:
+      - name: department_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_locations
+    description: Dimension table for locations
+    columns:
+      - name: location_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_jobs
+    description: Dimension table for jobs
+    columns:
+      - name: job_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_countries
+    description: Dimension table for countries
+    columns:
+      - name: country_id
+        tests:
+          - not_null
+          - unique
+
+  - name: dim_regions
+    description: Dimension table for regions
+    columns:
+      - name: region_id
+        tests:
+          - not_null
+          - unique
