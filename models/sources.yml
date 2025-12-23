@@ -1,0 +1,83 @@
+version: 2
+
+sources:
+  - name: hr
+    database: source
+    schema: hr
+    tables:
+      - name: src_employees
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: employee_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_departments
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: department_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_locations
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: location_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_jobs
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: job_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_countries
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: country_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_regions
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: region_id
+            tests:
+              - not_null
+              - unique
+
+      - name: src_salary
+        loaded_at_field: load_time
+        freshness:
+          warn_after: { count: 12, period: hour }
+          error_after: { count: 24, period: hour }
+        columns:
+          - name: employee_id
+            tests:
+              - not_null
+              - unique
